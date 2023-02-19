@@ -1,10 +1,15 @@
 package org.example;
 
+import java.util.Arrays;
+
 public class Main {
+    static int[] arr = new int[]{3, 6, 4, 1, 2};
+
     public static void main(String[] args) {
         System.out.println("pangram: " + isPangram("thisisnotpangram"));
         System.out.println("password: " + validPassword("password"));
         System.out.println("password: " + validPassword("Pa$sw0rd"));
+        System.out.println("smallest int: " + smallestPosIntNotInArr(arr));
     }
 
     // check if string is a pangram
@@ -49,5 +54,44 @@ public class Main {
             }
         }
         return lower && upper && special && digit;
+    }
+
+    /*
+    Write a function:
+    that, given an array A of N integers,
+    returns the smallest positive integer (greater than 0) that does not occur in A.
+
+    For example, given A = [1, 3, 6, 4, 1, 2], the function should return 5.
+    Given A = [1, 2, 3], the function should return 4.
+    Given A = [−1, −3], the function should return 1.
+    */
+    public static int smallestPosIntNotInArr(int[] A) {
+        Arrays.sort(A);
+        if (!looks(A, 1)) {
+            return 1;
+        }
+        for (int i = 0; i < A.length - 1; i++) {
+            if (A[i] > 0 && A[i] + 1 != A[i + 1] && A[i] != A[i + 1]) {
+                return A[i] + 1;
+            }
+        }
+        return A[A.length - 1] + 1;
+    }
+
+    public static boolean looks(int[] arr, int n) {
+        int beg = 0;
+        int end = arr.length - 1;
+        int mid;
+        while (end >= beg) {
+            mid = beg + (end - beg) / 2;
+            if (n == arr[mid]) {
+                return true;
+            } else if (n < arr[mid]) {
+                end = mid - 1;
+            } else {
+                beg = mid + 1;
+            }
+        }
+        return false;
     }
 }
