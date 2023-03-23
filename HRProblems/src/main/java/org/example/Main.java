@@ -14,6 +14,7 @@ public class Main {
 
         System.out.println("largest sum of int arr");
         sortDesc(testArr);
+        System.out.println(largestSum(testArr));
 
     }
 
