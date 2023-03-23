@@ -11,6 +11,10 @@ public class Main {
         System.out.println("password: " + validPassword("password"));
         System.out.println("password: " + validPassword("Pa$sw0rd"));
         System.out.println("smallest int: " + smallestPosIntNotInArr(arr));
+
+        System.out.println("largest sum of int arr");
+        sortDesc(testArr);
+
     }
 
     // check if string is a pangram
