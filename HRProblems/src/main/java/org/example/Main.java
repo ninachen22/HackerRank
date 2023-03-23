@@ -98,5 +98,16 @@ public class Main {
 
     // given an int arr
     // find subarr within arr with largest sum
+    public static void sortDesc(Integer[] intArr) {
+        for (int i = 0; i < intArr.length; i++) {
+            for (int j = i + 1; j < intArr.length; j++) {
+                if (intArr[i] < intArr[j]) {
+                    int temp = intArr[i];
+                    intArr[i] = intArr[j];
+                    intArr[j] = temp;
+                }
+            }
+        }
+    }
 
 }
