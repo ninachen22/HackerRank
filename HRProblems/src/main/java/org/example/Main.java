@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class Main {
     static int[] arr = new int[]{3, 6, 4, 1, 2};
-    static Integer[] testArr = {7,1,2,3,4,5};
+    static Integer[] testArr = {7, 1, 2, 3, 4, 5};
 
     public static void main(String[] args) {
         System.out.println("pangram: " + isPangram("thisisnotpangram"));
@@ -109,5 +109,10 @@ public class Main {
             }
         }
     }
+
+    public static int largestSum(Integer[] intArr) {
+        return intArr[0] + intArr[1];
+    }
+
 
 }
