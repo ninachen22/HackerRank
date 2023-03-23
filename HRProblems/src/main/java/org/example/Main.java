@@ -96,5 +96,7 @@ public class Main {
         return false;
     }
 
-    //arr of int and find subarr within arr with largest sum
+    // given an int arr
+    // find subarr within arr with largest sum
+
 }
