@@ -1,6 +1,7 @@
 package org.example;
 
 import java.util.Arrays;
+import java.util.List;
 
 public class Main {
     static int[] arr = new int[]{3, 6, 4, 1, 2};
@@ -117,6 +118,13 @@ public class Main {
 
     public static int largestSum(Integer[] intArr) {
         return intArr[0] + intArr[1];
+    }
+
+    // Simple Array Sum
+    // given an arr of ints, find sum of its elements
+    public static int simpleArraySum(List<Integer> ar) {
+        Integer sum = ar.stream().reduce(0, Integer :: sum);
+        return sum;
     }
 
 
