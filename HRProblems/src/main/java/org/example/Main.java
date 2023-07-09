@@ -163,6 +163,12 @@ public class Main {
         return sum;
     }
 
+    //    Diagonal Difference
+//    Given a square matrix, calculate the absolute difference
+//    between the sums of its diagonals
+    public static int diagonalDifference(List<List<Integer>> arr) {
+        return 1;
 
+    }
 
 }
