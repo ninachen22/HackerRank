@@ -1,5 +1,7 @@
 package org.example;
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -123,9 +125,44 @@ public class Main {
     // Simple Array Sum
     // given an arr of ints, find sum of its elements
     public static int simpleArraySum(List<Integer> ar) {
-        Integer sum = ar.stream().reduce(0, Integer :: sum);
+        Integer sum = ar.stream().reduce(0, Integer::sum);
         return sum;
     }
+
+    // Compare the Triplets
+    // The task is to find their comparison points by comparing
+    // a[0] with b[0], a[1] with b[1], and a[2] with b[2].
+    // If a[i] > b[i], then Alice is awarded 1 point.
+    // If a[i] < b[i], then Bob is awarded 1 point.
+    // If a[i] = b[i], then neither person receives a point.
+    // Comparison points is the total points a person earned.
+    // Given a and b, determine their respective comparison points.
+    public static List<Integer> compareTriplets(List<Integer> a, List<Integer> b) {
+        Integer[] comparative = {0, 0};
+//        List<Integer> comparative = new ArrayList<Integer>();
+//        comparative.add(0, 0);
+//        comparative.add(1, 0);
+        for (int i = 0; i < a.size(); i++) {
+            if (a.get(i) > b.get(i)) {
+                comparative[0] = comparative[0] + 1;
+            } else if (b.get(i) > a.get(i)) {
+                comparative[1] = comparative[1] + 1;
+            }
+        }
+//        return List.of(comparative);
+        return Arrays.asList(comparative);
+    }
+
+    //    A Very Big Sum
+//    return the sum of all array elements
+    public static long aVeryBigSum(List<Long> ar) {
+        long sum = 0;
+        for (int i = 0; i < ar.size(); i++) {
+            sum = sum + ar.get(i);
+        }
+        return sum;
+    }
+
 
 
 }
