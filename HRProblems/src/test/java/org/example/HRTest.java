@@ -8,8 +8,7 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
-import static org.example.Main.compareTriplets;
-import static org.example.Main.simpleArraySum;
+import static org.example.Main.*;
 
 public class HRTest {
     @Test
@@ -23,23 +22,36 @@ public class HRTest {
 
     @Test
     public void compareTripsTest() {
-        Integer[] a = {5,6,7};
-        Integer[] b = {3,6,10};
-        Integer[] expected = {1,1};
-        Integer[] actual = compareTriplets(Arrays.asList(a),Arrays.asList(b)).toArray(new Integer[0]);
+        Integer[] a = {5, 6, 7};
+        Integer[] b = {3, 6, 10};
+        Integer[] expected = {1, 1};
+        Integer[] actual = compareTriplets(Arrays.asList(a), Arrays.asList(b)).toArray(new Integer[0]);
     }
 
     @Test
     public void diagDiffTest1() {
         List<Integer> toAdd = new ArrayList<>();
         toAdd.add(0, 11);
-        toAdd.add(1,2);
-        toAdd.add(2,4);
+        toAdd.add(1, 2);
+        toAdd.add(2, 4);
         List<List<Integer>> matrix = new ArrayList<>();
         matrix.add(0, Collections.singletonList(new Integer(0)));
         matrix.add(1, toAdd);
         System.out.println(matrix);
         System.out.println(matrix.get(1).get(1));
+    }
+
+    @Test
+    public void subArrTotalTest() {
+        List<Integer> arr = new ArrayList<>();
+        arr.add(0, 3);
+        arr.add(1, 1);
+        arr.add(2, 2);
+        arr.add(3, 3);
+        long expected = 20;
+        long actual = subarraySum(arr);
+        Assert.assertEquals(expected, actual);
+        System.out.println(actual);
     }
 
 }

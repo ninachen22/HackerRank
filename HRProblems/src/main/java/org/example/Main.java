@@ -5,6 +5,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import static java.lang.Integer.toBinaryString;
+
 public class Main {
     static int[] arr = new int[]{3, 6, 4, 1, 2};
     static Integer[] testArr = {7, 1, 2, 3, 4, 5};
@@ -179,7 +181,89 @@ public class Main {
         }
         return Math.abs(forward - backward); // not right yet
 //        return 1;
+    }
+
+    //FizzBuzz
+    public static void fizzBuzz(int n) {
+        for (int i = 1; i < n + 1; i++) {
+            boolean fizz = (i % 3 == 0);
+            boolean buzz = (i % 5 == 0);
+            if (fizz && !buzz) {
+                System.out.println("Fizz");
+            } else if (buzz && !fizz) {
+                System.out.println("Buzz");
+            } else if (fizz && buzz) {
+                System.out.println("FizzBuzz");
+            } else {
+                System.out.println(i);
+            }
+        }
+    }
+
+
+    //asmt
+    /*
+     * Complete the 'rearrange' function below.
+     * The function is expected to return an INTEGER_ARRAY.
+     * The function accepts INTEGER_ARRAY elements as parameter.
+     */
+//    public static List<Integer> rearrange(List<Integer> elements) {
+//        List<String> binaryList = new ArrayList<>();
+//        for (int i = 0; i < elements.size(); i++) {
+//            String binary = toBinaryString(elements.get(i));
+//            binaryList.add(i, binary);
+//        }
+//        for (int i = 0; i < binaryList.size(); i++) {
+//            if (binaryList.get(i).co)
+//        }
+//
+//    }
+    /*
+    public static void main(String[] args) {
+        Integer[] arr = {2, 7, 31, 42, 56};
+        while (!isSorted(arr)) {
+            sortByDesc(arr);
+        }
+        System.out.println(Arrays.toString(arr));
+    }
+    private static Integer[] sortByDesc(Integer[] arr) {
+        for (int i = 0; i < arr.length - 1; i++) {
+            if (arr[i] < arr[i + 1]) {
+                int temp = arr[i];
+                arr[i] = arr[i + 1];
+                arr[i + 1] = temp;
+            }
+        }
+        return arr;
+    }
+    public static Boolean isSorted(Integer[] arr) {
+        for (int i = 0; i < arr.length - 1; i++) {
+            if (arr[i] < arr[i + 1]) {
+                return false;
+            }
+        }
+        return true;
+    }
+     */
+
+
+    /*
+     * Complete the 'subarraySum' function below.
+     * The function is expected to return a LONG_INTEGER.
+     * The function accepts INTEGER_ARRAY arr as parameter.
+     */
+    public static long subarraySum(List<Integer> arr) {
+        long totalSum = 0;
+        for (int i = 1; i <= arr.get(0); i++) {
+//            totalSum = totalSum + arr.get(i);
+            for (int j = i; j <= arr.get(0); j++) {
+                totalSum = totalSum + arr.get(j);
+            }
+        }
+        return totalSum;
 
     }
+
+
 
 }
