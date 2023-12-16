@@ -172,13 +172,12 @@ public class Main {
         int forward = 0;
         int backward = 0;
         int arrIndexSize = arr.get(0).get(0);
-        for (int i = 0; i < arr.get(0).get(0); i++) {
+        for (int i = 0; i <= arr.get(0).get(0); i++) {
             forward = forward + arr.get(i).get(i + 1);
             backward = backward + arr.get(arrIndexSize - 1).get(i + 1);
             arrIndexSize--;
         }
         return Math.abs(forward - backward); // not right yet
-//        return 1;
     }
 
     //FizzBuzz
@@ -261,7 +260,6 @@ public class Main {
         return totalSum;
 
     }
-
 
 
 }
