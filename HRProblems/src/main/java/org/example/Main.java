@@ -175,8 +175,6 @@ public class Main {
         for (int i = 0; i < arr.get(0).get(0); i++) {
             forward = forward + arr.get(i).get(i + 1);
             backward = backward + arr.get(arrIndexSize - 1).get(i + 1);
-//            forward = forward + arr.get(i+1).get(i);
-//            backward = backward + arr.get(i+1).get(arrIndexSize-1);
             arrIndexSize--;
         }
         return Math.abs(forward - backward); // not right yet
