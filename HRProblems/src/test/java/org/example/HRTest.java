@@ -30,15 +30,14 @@ public class HRTest {
 
     @Test
     public void diagDiffTest1() {
-        List<Integer> toAdd = new ArrayList<>();
-        toAdd.add(0, 11);
-        toAdd.add(1, 2);
-        toAdd.add(2, 4);
         List<List<Integer>> matrix = new ArrayList<>();
-        matrix.add(0, Collections.singletonList(new Integer(0)));
-        matrix.add(1, toAdd);
-        System.out.println(matrix);
-        System.out.println(matrix.get(1).get(1));
+        matrix.add(List.of(3));
+        matrix.add(List.of(11,2,4));
+        matrix.add(List.of(4,5,6));
+        matrix.add(List.of(10,8,-12));
+        int expected = 15;
+        int actual = diagonalDifference(matrix);
+        Assert.assertEquals(expected,actual);
     }
 
     @Test
